@@ -475,14 +475,36 @@
         </button>
         <form class="cta-box">
           <p>Zostaw swoje dane w formularzu poniżej</p>
-          <label for="name">Imie</label>
-          <input name="name" type="text" id="name" />
-          <label for="phone">Telefon</label>
-          <input name="phone" type="tel" id="phone" />
-          <label for="email">Email</label>
-          <input name="email" type="email" id="email" />
-          <label for="adnotations">Komentarz</label>
-          <input name="adnotations" type="text" id="adnotations" />
+          <label class="cta-box-label" for="name">
+            Imie
+            <svg width="12" height="12" class="icon-form">
+              <use href="images/icons.svg#icon-name"></use>
+            </svg>
+          </label>
+          <input class="cta-box-input" name="name" type="text" id="name" />
+          <label class="cta-box-label" for="phone">
+            Telefon
+            <svg width="13" height="13" class="icon-form">
+              <use href="images/icons.svg#icon-phone"></use>
+            </svg>
+          </label>
+          <input class="cta-box-input" name="phone" type="tel" id="phone" />
+          <label class="cta-box-label" for="email">
+            Email
+            <svg width="15" height="12" class="icon-form">
+              <use href="images/icons.svg#icon-mail"></use>
+            </svg>
+          </label>
+          <input class="cta-box-input" name="email" type="email" id="email" />
+          <label class="cta-box-label" for="adnotations">Komentarz</label>
+          <textarea
+            class="cta-box-adnotations"
+            name="adnotations"
+            type="text"
+            id="adnotations"
+            placeholder="Wprowadź tekst"
+          ></textarea>
+          <button class="button-call-to-action form-button" type="submit">Wyślij</button>
         </form>
       </div>
     </div>
