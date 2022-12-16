@@ -466,6 +466,9 @@
         </div>
       </div>
     </footer>
+
+    <!-- WYSKAKUJĄCE OKNO MODALNE Z FORMULARZEM -->
+
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-close" data-modal-close>
@@ -475,27 +478,33 @@
         </button>
         <form class="cta-box">
           <p>Zostaw swoje dane w formularzu poniżej</p>
-          <label class="cta-box-label" for="name">
-            Imie
-            <svg width="12" height="12" class="icon-form">
-              <use href="images/icons.svg#icon-name"></use>
-            </svg>
-          </label>
-          <input class="cta-box-input" name="name" type="text" id="name" />
-          <label class="cta-box-label" for="phone">
-            Telefon
-            <svg width="13" height="13" class="icon-form">
-              <use href="images/icons.svg#icon-phone"></use>
-            </svg>
-          </label>
-          <input class="cta-box-input" name="phone" type="tel" id="phone" />
-          <label class="cta-box-label" for="email">
-            Email
-            <svg width="15" height="12" class="icon-form">
-              <use href="images/icons.svg#icon-mail"></use>
-            </svg>
-          </label>
-          <input class="cta-box-input" name="email" type="email" id="email" />
+          <div class="form-label">
+            <label class="cta-box-label" for="name">
+              Imie
+              <svg class="icon-form">
+                <use href="images/icons.svg#icon-name"></use>
+              </svg>
+            </label>
+            <input class="cta-box-input" name="name" type="text" id="name" />
+          </div>
+          <div class="form-label">
+            <label class="cta-box-label" for="phone">
+              Telefon
+              <svg class="icon-form">
+                <use href="images/icons.svg#icon-phone"></use>
+              </svg>
+            </label>
+            <input class="cta-box-input" name="phone" type="tel" id="phone" />
+          </div>
+          <div class="form-label">
+            <label class="cta-box-label" for="email">
+              Email
+              <svg class="icon-form">
+                <use href="images/icons.svg#icon-mail"></use>
+              </svg>
+            </label>
+            <input class="cta-box-input" name="email" type="email" id="email" />
+          </div>
           <label class="cta-box-label" for="adnotations">Komentarz</label>
           <textarea
             class="cta-box-adnotations"
@@ -504,6 +513,16 @@
             id="adnotations"
             placeholder="Wprowadź tekst"
           ></textarea>
+          <label class="cta-agreement" for="checkbox">
+            <input class="cta-agreement-checkbox" type="checkbox" name="checkbox" id="checkbox" />
+            <span class="cta-checkbox">
+              <svg class="check-icon" width="16" height="15">
+                <use href="images/icons.svg#icon-tick"></use>
+              </svg>
+            </span>
+            Oświadczam iż akceptuję <a class="cta-agreement-link" href="#">Regulamin</a> i
+            <a class="cta-agreement-link" href="#">Politykę Prywatności</a>
+          </label>
           <button class="button-call-to-action form-button" type="submit">Wyślij</button>
         </form>
       </div>

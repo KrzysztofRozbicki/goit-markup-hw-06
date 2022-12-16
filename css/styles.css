@@ -184,7 +184,7 @@ body {
       var(--background-dark-transparent),
       var(--background-dark-transparent)
     ),
-    url(../images/main.jpg);
+    url('../images/main.jpg');
   background-size: cover;
 }
 .call-to-action-box {
@@ -642,6 +642,8 @@ body {
   height: 581px;
   background-color: var(--font-white);
   border-radius: 4px;
+  box-shadow: 0px 1px 3px var(--shadow-box-1), 0px 1px 1px var(--shadow-box-2),
+    0px 2px 1px var(--shadow-box-3);
 }
 
 .modal-close {
@@ -693,22 +695,33 @@ body {
   border-radius: 4px;
   padding: 11px 12px 11px 42px;
   margin-bottom: 10px;
-  color: var(--font-black);
+  color: var(--font-gray);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .cta-box-input:focus-within {
   outline: none;
   border-color: var(--blue);
 }
 
 .icon-form {
-  fill: var(--font-black);
+  width: 18px;
+  height: 18px;
   position: absolute;
   top: 40px;
   left: 16px;
   transform: translateY(-50%);
 }
-.cta-box-label:focus-within > .icon-form {
-  fill: var(--blue)
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  fill: var(--font-black);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-label:focus-within {
+  fill: var(--blue);
 }
 
 .cta-box-adnotations {
@@ -718,7 +731,12 @@ body {
   border-radius: 4px;
   height: 120px;
   margin-bottom: 20px;
+  color: var(--font-gray);
+  font-size: 12px;
+  line-height: 1.172;
+  letter-spacing: 0.01em;
   resize: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cta-box-adnotations::placeholder {
   font-size: 12px;
@@ -735,4 +753,51 @@ body {
   margin: 0 auto;
   width: 200px;
   box-shadow: 0px 4px 4px var(--button-shadow);
+}
+
+.cta-agreement {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  color: var(--font-gray);
+  margin-bottom: 30px;
+  margin-left: 14px;
+  padding-left: 7px;
+}
+.cta-agreement-checkbox {
+  opacity: 0;
+}
+.cta-agreement-link {
+  text-decoration-line: underline;
+  color: var(--blue);
+}
+
+.cta-checkbox {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--font-black);
+  border-radius: 2px;
+  margin-right: 8px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-agreement-checkbox:checked + .cta-checkbox {
+  background-color: var(--blue);
+  outline: none;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cta-agreement-checkbox:checked + .cta-checkbox > .check-icon {
+  visibility: visible;
+}
+.check-icon {
+  visibility: hidden;
+  display: block;
+  fill: var(--font-white);
 }
