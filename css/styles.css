@@ -1,0 +1,614 @@
+/* Deklaracja zmiennych globalnych dla kolorów - wg specyfikacji «C6»*/
+:root {
+  --blue: #2196f3;
+  --blue-transparent: rgba(33, 150, 243, 0.9);
+  --logo-black: #000000;
+  --font-black: #212121;
+  --font-gray: #757575;
+  --font-white: #ffffff;
+  --font-address: #ffffff99;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --background-dark: #2f303a;
+  --background-dark-transparent: #2f303a66;
+  --background-overlay: rgba(0, 0, 0, 0.2);
+  --close-circle: rgba(0, 0, 0, 0.1);
+  --stroke-color: #ececec;
+  --border-color: #eeeeee;
+  --button-color: #f5f4fa;
+  --icon-color: #afb1b8;
+  --background-light: #e5e5e5;
+  --shadow-box-1: rgba(0, 0, 0, 0.12);
+  --shadow-box-2: rgba(0, 0, 0, 0.14);
+  --shadow-box-3: rgba(0, 0, 0, 0.2);
+  --shadow-box-portfolio-1: rgba(0, 0, 0, 0.12);
+  --shadow-box-portfolio-2: rgba(0, 0, 0, 0.06);
+  --shadow-box-portfolio-3: rgba(0, 0, 0, 0.16);
+  --section-padding: 94px;
+  --icon-background: rgba(255, 255, 255, 0.1);
+  --text-box-background: rgba(47, 48, 58, 0.8);
+}
+
+/* deklaracja Border-box */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* resetowanie stylów */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p,
+figure {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+body {
+  font-family: 'Roboto', 'Raleway', sans-serif;
+  color: var(--font-gray);
+  text-decoration: none;
+  background-color: var(--background-light);
+  width: 1600px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+/*NAgłówki sekcji */
+
+.main-header {
+  margin-bottom: 30px;
+  color: var(--font-white);
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.section-header {
+  text-align: center;
+  color: var(--font-black);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+/* Klasy dla logo - ogólna + szczególna */
+.logo {
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.logo-header {
+  color: var(--logo-black);
+}
+
+.logo-footer {
+  color: var(--font-white);
+}
+
+/* Klasy dla svg */
+
+.icon-top {
+  width: 16px;
+  height: 12px;
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.icon-article {
+  width: 70px;
+  height: 70px;
+}
+
+.icon-social {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: currentColor;
+}
+
+.icon-client {
+  display: block;
+  width: 106px;
+  height: 60px;
+  fill: currentColor;
+}
+
+/* Klasy dla ułożenia elementów menu górnego */
+
+.top-bar {
+  padding: 24px 0px 25px 0px;
+  background-color: var(--font-white);
+  border-bottom: 1px solid var(--stroke-color);
+}
+
+.top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-menu-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 93px;
+}
+
+.top-menu-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.section-article {
+  text-align: center;
+  background-color: var(--font-white);
+}
+
+.section {
+  padding: var(--section-padding) 0px;
+}
+
+.team {
+  background-color: var(--button-color);
+}
+
+.call-to-action {
+  text-align: center;
+  background: linear-gradient(
+      var(--background-dark-transparent),
+      var(--background-dark-transparent)
+    ),
+    url(../images/main.jpg);
+  background-size: cover;
+}
+.call-to-action-box {
+  padding: 106px 252px;
+}
+.section-project {
+  text-align: center;
+  background-color: var(--font-white);
+}
+
+/* aktywna strona - link */
+.menu-link.is-active {
+  color: var(--blue);
+  position: relative;
+}
+
+.menu-link.is-active:after {
+  content: '';
+  position: absolute;
+  transform: translateY(46px);
+  left: 0px;
+  width: 53px;
+  height: 4px;
+  background-color: var(--blue);
+  border-radius: 2px;
+}
+
+/* Klasa dla list */
+
+.list-item {
+  list-style: none;
+}
+
+.list-item-button {
+  display: inline-block;
+}
+
+/* Klasy dla menu */
+
+.menu-link {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--font-black);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 46px;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: var(--blue);
+}
+
+.menu-footer {
+  margin-top: 20px;
+}
+
+/* Klasy dla article*/
+
+.box-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.team-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.article-list {
+  margin-bottom: 94px;
+}
+.article-container {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+.article-top {
+  padding: 25px 100px;
+  background-color: var(--button-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.article-header {
+  color: var(--font-black);
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.article-text {
+  color: var(--font-gray);
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.our-clients {
+  background-color: var(--font-white);
+}
+
+.client-list-flex {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.client-list-link {
+  border-radius: 4px;
+  outline: 1px solid var(--icon-color);
+  padding: 16px 32px;
+  display: inline-block;
+  color: var(--icon-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-list-link:hover,
+.client-list-link:focus {
+  color: var(--blue);
+  outline-color: var(--blue);
+}
+
+/* klasy dla teamu: */
+
+.team-container {
+  background-color: var(--font-white);
+  width: 270px;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  box-shadow: 0px 1px 3px var(--shadow-box-1), 0px 1px 1px var(--shadow-box-2),
+    0px 2px 1px var(--shadow-box-3);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-container figcaption {
+  padding: 30px 32px;
+  text-align: center;
+}
+.team-member {
+  color: var(--font-black);
+  font-weight: 500;
+}
+
+.team-social-flex {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.team-social {
+  display: block;
+  padding: 12px;
+  color: var(--icon-color);
+  border-radius: 50%;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social:hover,
+.team-social:focus {
+  background-color: var(--blue);
+  color: var(--font-white);
+}
+
+.team-position {
+  margin-top: 10px;
+  color: var(--font-gray);
+}
+
+/* Klasa project dla divów w których są przykłady portfolio */
+
+.project-list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.project-box {
+  position: relative;
+  width: 370px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-box:hover,
+.project-box:focus {
+  box-shadow: 0px 1px 1px var(--shadow-box-portfolio-1), 0px 4px 4px var(--shadow-box-portfolio-2),
+    1px 4px 6px var(--shadow-box-portfolio-3);
+  cursor: pointer;
+}
+
+.project-picture {
+  vertical-align: middle;
+}
+
+.on-picture-text {
+  transform: translateY(-70px);
+  background-color: var(--text-box-background);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--font-white);
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 27px 0;
+}
+
+.project-text-box {
+  position: relative;
+  padding: 20px 24px;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  text-align: left;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: var(--font-black);
+}
+
+.project-description {
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.03em;
+  color: var(--font-gray);
+  text-align: left;
+}
+
+.project-overflow-text-box {
+  position: relative;
+  overflow: hidden;
+  height: 294px;
+}
+
+.project-overflow-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: var(--font-white);
+  text-align: left;
+  padding: 49px 45px 49px 24px;
+  background-color: var(--blue-transparent);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-box:hover .project-overflow-text,
+.project-box:focus .project-overflow-text {
+  transform: translateY(-294px);
+}
+
+/* Klasa buttons dla przycisków z filtrami */
+/* Z jakiegoś powodu gdy w klasach .buttons nie ma zadeklarowanej font-family: 'Roboto' - czcionka się zmienia */
+
+.project-list-button {
+  display: inline-block;
+  background-color: var(--button-color);
+  color: var(--font-black);
+  font-size: 16px;
+  line-height: 1.625;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 0px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0px 4px 50px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-call-to-action {
+  background-color: var(--blue);
+  color: var(--font-white);
+  font-size: 16px;
+  line-height: 1.875;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: 0px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px 41px;
+}
+.project-list-button:hover,
+.project-list-button:focus {
+  background-color: var(--blue);
+  color: var(--font-white);
+  box-shadow: 0px 4px 4px var(--shadow);
+}
+
+/* Klasy dla addresu w header i footer */
+
+.contact-text-header {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--font-gray);
+  text-decoration: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-text-header:hover,
+.contact-text-header:focus {
+  color: var(--blue);
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: left;
+  gap: 70px;
+}
+.social-footer-box {
+  text-align: left;
+}
+.social-footer-header {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-top: 22px;
+  margin-bottom: 0px;
+}
+
+.social-footer-icon-box {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.social-footer-link {
+  display: block;
+  padding: 12px;
+  background-color: var(--icon-background);
+  border-radius: 50%;
+  color: var(--font-white);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-footer-link:hover,
+.social-footer-link:focus {
+  background-color: var(--blue);
+}
+.contact-text-footer {
+  color: var(--font-address);
+  text-decoration: none;
+  font-style: normal;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-text-footer:hover,
+.contact-text-footer:focus {
+  color: var(--blue);
+}
+.contact-text {
+  font-size: 14px;
+  font-style: normal;
+  list-style: none;
+}
+
+.contact-text:nth-child(2n) {
+  margin: 9px 0px;
+}
+
+.contact-text-mail-bottom {
+  text-decoration: underline;
+}
+
+/* Klasa dla footer */
+
+.bottom-bar {
+  padding: 60px 0px;
+  letter-spacing: 0.03em;
+  color: var(--font-white);
+  background-color: var(--background-dark);
+  line-height: 1.7;
+  text-decoration: none;
+}
+
+/* OKNO MODUŁOWE */
+
+.modal.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.4);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transition-property: opacity, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  width: 528px;
+  height: 581px;
+  background-color: var(--font-white);
+  border-radius: 4px;
+  box-shadow: 0 0 0 100vw var(--background-overlay);
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 9px;
+  border: 1px solid var(--close-circle);
+  background-color: var(--font-white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-close svg {
+  display: block;
+}
