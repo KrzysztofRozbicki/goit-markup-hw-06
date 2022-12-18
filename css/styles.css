@@ -622,10 +622,14 @@ body {
   width: 100vw;
   height: 100vw;
   background-color: var(--background-overlay);
+  transition-property: opacity, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
 }
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
 }
 .modal {
   position: fixed;
